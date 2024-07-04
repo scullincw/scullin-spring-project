@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: example_route
+          uri: http://httpbin.org:80
+          predicates:
+            - Path=/get
+          filters:
+            - AddRequestHeader=Example, Value

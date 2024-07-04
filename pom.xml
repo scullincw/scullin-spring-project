@@ -19,5 +19,7 @@
         <module>scullin-parent</module>
         <module>demo1</module>
         <module>spring-session</module>
+        <module>spring-security-jwt</module>
+        <module>scullin-gateway</module>
     </modules>
 </project>
