@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: demo1
+
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: localhost:8848
+      config:
+        # enabled没有用
+        enabled: false
+        server-addr: localhost:8848
+
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env
+  endpoint:
+    env:
+      enabled: true
