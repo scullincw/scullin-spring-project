@@ -8,11 +8,19 @@ spring:
     name: gateway-service
 
   cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
-        - id: example_route
+        - id: example-route
           uri: http://httpbin.org:80
           predicates:
             - Path=/get
           filters:
+            # 这个配置会被Java Class中的配置覆盖
             - AddRequestHeader=Example, Value
